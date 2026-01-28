@@ -73,7 +73,8 @@ a {
 	gap: 32px;
 	align-items: start;
 
-	max-width: 1200px;
+	max-width: none;
+	width: min(1400px, 100%);
 	margin: 0 auto;
 }
 
