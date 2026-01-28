@@ -2,4 +2,36 @@ body {
 	background-color: black;
 	color: #149414;
 	font-family: Arial, Helvetica, sans-serif;
+
+	max-width: 700px;
+	margin: 40px auto;
+	padding: 0 16px;
+
+	font-size: 18px;
+	line-height: 1.55;
+}
+
+a {
+	color: #149414;
+	text-decoration: underline;
+}
+
+a:visited {
+	color: #149414;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+p {
+	margin: 0 0 1em 0;
+}
+
+h1 {
+	margin-bottom: 1.5em;
+}
+
+h3 {
+	margin: 2em 0 1em 0;
 }
