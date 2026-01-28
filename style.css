@@ -55,7 +55,7 @@ h3 {
 .sidebar {
   flex: 0 0 300px;
   position: sticky;
-  top: 24px;
+  top: 12px;
   align-self: start;
 }
 
