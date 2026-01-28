@@ -24,11 +24,6 @@ p {
 	margin: 0 0 1em 0;
 }
 
-p {
-	margin: 0 0 1em 0;
-}
-
-
 i {
 	font-style: italic;
 	opacity: 0.95;
@@ -53,4 +48,40 @@ a:focus-visible {
 
 a {
 	padding: 2px 0;
+}
+
+.card {
+  border: 1px solid currentColor;
+  padding: 12px 14px;
+  margin: 0 0 16px 0;
+}
+
+.card .title {
+  margin: 0 0 6px 0;
+}
+
+.card .meta {
+  margin: 0 0 8px 0;
+}
+
+.card .excerpt {
+  margin: 0;
+}
+
+.layout {
+	display: grid;
+	grid-template-columns: 320px 1fr;
+	gap: 32px;
+	align-items: start;
+}
+
+.sidebar {
+	position: sticky;
+	top: 24px;
+}
+
+.work-columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 24px;
 }
