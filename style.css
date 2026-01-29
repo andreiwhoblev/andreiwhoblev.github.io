@@ -191,3 +191,17 @@ h3 {
     animation: none;
   }
 }
+
+/* Dim non-hovered cards when one card is active */
+body:has(.card:hover) .card {
+  transition: opacity 160ms linear, filter 160ms linear;
+  opacity: 0.45;
+  filter: blur(0.3px);
+}
+
+/* Keep hovered card crisp and bright */
+body:has(.card:hover) .card:hover {
+  opacity: 1;
+  filter: none;
+}
+
