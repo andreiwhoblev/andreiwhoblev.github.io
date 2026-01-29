@@ -143,7 +143,7 @@ h3 {
 
 /* Dim other cards strongly when one is hovered (cards only, not sidebar) */
 body:has(.card:hover) .card {
-  opacity: 0.18;
+  opacity: 0.12;
 }
 
 body:has(.card:hover) .card:hover {
