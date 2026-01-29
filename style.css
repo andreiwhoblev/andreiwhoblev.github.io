@@ -146,7 +146,7 @@ h3 {
 .card:hover .excerpt i,
 .card:focus-within .excerpt i {
   animation:
-    excerptShimmer 2.4s ease-in-out infinite,
+    excerptShimmer 1.8s ease-in-out infinite,
     phosphorPulse 2.6s ease-in-out infinite;
   will-change: text-shadow, filter;
 }
