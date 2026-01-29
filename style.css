@@ -109,7 +109,8 @@ h3 {
   opacity: 0.8;
 }
 
-/* Phosphor-style glow on hover / focus */
+/* --- Card glow + excerpt shimmer (interaction only) --- */
+
 .card {
   transition:
     border-color 120ms linear,
@@ -126,8 +127,55 @@ h3 {
     0 0 14px rgba(20, 148, 20, 0.15);
 }
 
-/* Subtle text phosphor bloom */
-.card:hover,
-.card:focus-within {
-  text-shadow: 0 0 2px rgba(20, 148, 20, 0.35);
+/* Stronger phosphor bloom for title + excerpt */
+.card:hover .title,
+.card:focus-within .title,
+.card:hover .excerpt,
+.card:focus-within .excerpt {
+  text-shadow:
+    0 0 2px rgba(20, 148, 20, 0.55),
+    0 0 8px rgba(20, 148, 20, 0.28);
+}
+
+/* Readable “coruscating” shimmer on excerpt (hover/focus only) */
+.card:hover .excerpt,
+.card:focus-within .excerpt {
+  animation: excerptShimmer 1.8s ease-in-out infinite;
+  will-change: text-shadow;
+}
+
+@keyframes excerptShimmer {
+  0% {
+    text-shadow:
+      0 0 2px rgba(20, 148, 20, 0.50),
+      0 0 8px rgba(20, 148, 20, 0.22);
+  }
+  25% {
+    text-shadow:
+      1px 0 2px rgba(20, 148, 20, 0.55),
+      -1px 0 9px rgba(20, 148, 20, 0.26);
+  }
+  50% {
+    text-shadow:
+      0 -1px 2px rgba(20, 148, 20, 0.60),
+      0 1px 10px rgba(20, 148, 20, 0.30);
+  }
+  75% {
+    text-shadow:
+      -1px 0 2px rgba(20, 148, 20, 0.55),
+      1px 0 9px rgba(20, 148, 20, 0.26);
+  }
+  100% {
+    text-shadow:
+      0 0 2px rgba(20, 148, 20, 0.50),
+      0 0 8px rgba(20, 148, 20, 0.22);
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .excerpt,
+  .card:focus-within .excerpt {
+    animation: none;
+  }
 }
