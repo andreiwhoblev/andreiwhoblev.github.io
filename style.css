@@ -176,3 +176,42 @@ h3 {
     display: none;
   }
 }
+
+/* Quixote mark placement */
+.name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.quixote-mark {
+  width: 240px;   /* medium */
+  height: 80px;
+  flex: 0 0 auto;
+  color: inherit; /* SVG uses currentColor */
+}
+
+.quixote-mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Desktop: show next to name, hide footer mark */
+.quixote-mark--mobile {
+  display: none;
+}
+
+/* Mobile: hide header mark, show footer mark */
+@media (max-width: 900px) {
+  .quixote-mark--header {
+    display: none;
+  }
+
+  .quixote-mark--mobile {
+    display: block;
+    margin-top: 28px;
+    opacity: 0.85;
+  }
+}
+
