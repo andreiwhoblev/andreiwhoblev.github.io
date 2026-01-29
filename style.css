@@ -126,10 +126,11 @@ h3 {
   border-color: rgba(20, 148, 20, 0.95);
 }
 
-/* Mobile: stack layout cleanly */
 @media (max-width: 900px) {
   body {
     margin: 24px auto;
+    font-size: 17px;
+    line-height: 1.55;
   }
 
   .layout {
@@ -146,5 +147,13 @@ h3 {
   .work-columns {
     grid-template-columns: 1fr;
     gap: 22px;
+  }
+
+  .card {
+    padding: 11px 12px;
+  }
+
+  .work-col .card + .card {
+    margin-top: 16px;
   }
 }
