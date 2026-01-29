@@ -179,3 +179,34 @@ h3 {
     animation: none;
   }
 }
+
+/* Subtle phosphor brightness pulse */
+.card:hover .excerpt,
+.card:focus-within .excerpt {
+  animation:
+    excerptShimmer 1.8s ease-in-out infinite,
+    phosphorPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes phosphorPulse {
+  0% {
+    filter: brightness(1);
+    opacity: 1;
+  }
+  50% {
+    filter: brightness(1.12);
+    opacity: 0.97;
+  }
+  100% {
+    filter: brightness(1);
+    opacity: 1;
+  }
+}
+
+/* Reduced motion: no pulse */
+@media (prefers-reduced-motion: reduce) {
+  .card:hover .excerpt,
+  .card:focus-within .excerpt {
+    animation: none;
+  }
+}
