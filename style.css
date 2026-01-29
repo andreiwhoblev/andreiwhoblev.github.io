@@ -180,15 +180,15 @@ h3 {
 /* Quixote mark placement */
 .name-row {
   display: flex;
-  align-items: baseline;
+  align-items: flex-end; /* aligns the "field" with the bottom of the name */
   gap: 16px;
 }
 
 .quixote-mark {
-  width: 240px;   /* medium */
-  height: 80px;
+  width: 320px;   /* medium-wide, gives field room */
+  height: 34px;   /* matches the h1 height closely */
   flex: 0 0 auto;
-  color: inherit; /* SVG uses currentColor */
+  color: inherit;
 }
 
 .quixote-mark svg {
