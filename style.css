@@ -125,3 +125,26 @@ h3 {
 .card:focus-within {
   border-color: rgba(20, 148, 20, 0.95);
 }
+
+/* Mobile: stack layout cleanly */
+@media (max-width: 900px) {
+  body {
+    margin: 24px auto;
+  }
+
+  .layout {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sidebar {
+    position: static;
+    top: auto;
+    flex: 1 1 auto;
+  }
+
+  .work-columns {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
