@@ -133,6 +133,8 @@ h3 {
 /* Brighten title link + excerpt text on active card (no shimmer) */
 .card:hover .title a,
 .card:focus-within .title a,
+.card:hover .meta,
+.card:focus-within .meta,
 .card:hover .excerpt i,
 .card:focus-within .excerpt i {
   color: #7dff7d;
@@ -147,5 +149,14 @@ body:has(.card:hover) .card {
 }
 
 body:has(.card:hover) .card:hover {
+  opacity: 1;
+}
+
+/* Recede section headings when a card is hovered */
+body:has(.card:hover) .work-col h3 {
+  opacity: 0.18;
+}
+
+body:has(.card:hover) .work-col h3:hover {
   opacity: 1;
 }
