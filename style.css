@@ -157,3 +157,22 @@ h3 {
     margin-top: 16px;
   }
 }
+
+.name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+}
+
+.quixote-mark {
+  width: 140px;
+  height: 48px;
+  flex: 0 0 auto;
+  color: inherit; /* ensures the SVG uses the site green */
+}
+
+@media (max-width: 900px) {
+  .quixote-mark {
+    display: none;
+  }
+}
