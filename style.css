@@ -99,10 +99,14 @@ h3 {
 
 .card .meta {
   margin: 0 0 8px 0;
+  font-size: 15px;
+  opacity: 0.75;
 }
+
 
 .card .excerpt {
   margin: 0;
+  max-width: 38em;
 }
 
 .tags {
@@ -110,4 +114,14 @@ h3 {
   opacity: 0.45;
   color: rgba(20, 148, 20, 0.7);
   margin-top: 8px;
+}
+
+/* Subtle card hover/focus: border-only */
+.card {
+  transition: border-color 120ms linear;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: rgba(20, 148, 20, 0.95);
 }
