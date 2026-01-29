@@ -109,13 +109,25 @@ h3 {
   opacity: 0.8;
 }
 
-/* Subtle card interactivity: hover + keyboard focus (no motion) */
+/* Phosphor-style glow on hover / focus */
 .card {
-  transition: border-color 140ms linear, background-color 140ms linear;
+  transition:
+    border-color 120ms linear,
+    background-color 120ms linear,
+    box-shadow 120ms linear;
 }
 
 .card:hover,
 .card:focus-within {
-  border-color: rgba(20, 148, 20, 0.85);
-  background-color: rgba(20, 148, 20, 0.04);
+  border-color: #6bff6b;
+  background-color: rgba(20, 148, 20, 0.06);
+  box-shadow:
+    0 0 6px rgba(20, 148, 20, 0.35),
+    0 0 14px rgba(20, 148, 20, 0.15);
+}
+
+/* Subtle text phosphor bloom */
+.card:hover,
+.card:focus-within {
+  text-shadow: 0 0 2px rgba(20, 148, 20, 0.35);
 }
