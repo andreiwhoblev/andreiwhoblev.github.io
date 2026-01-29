@@ -108,3 +108,14 @@ h3 {
   font-size: 15px;
   opacity: 0.8;
 }
+
+/* Subtle card interactivity: hover + keyboard focus (no motion) */
+.card {
+  transition: border-color 140ms linear, background-color 140ms linear;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: rgba(20, 148, 20, 0.85);
+  background-color: rgba(20, 148, 20, 0.04);
+}
