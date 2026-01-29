@@ -57,6 +57,19 @@ h3 {
   position: sticky;
   top: 12px;
   align-self: start;
+
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.sidebar p {
+  margin: 0 0 0.85em 0;
+}
+
+.contact {
+  margin-top: 1.25em;
+  font-size: 15px;
+  opacity: 0.8;
 }
 
 .content {
@@ -72,15 +85,13 @@ h3 {
 .card {
   border: 1px solid currentColor;
   padding: 12px 14px;
-  margin: 0 0 16px 0;
-
-  /* Interaction transitions (simple + readable) */
-  transition:
-    border-color 120ms linear,
-    background-color 120ms linear,
-    box-shadow 120ms linear,
-    opacity 160ms linear;
+  margin: 0;
 }
+
+.work-col .card + .card {
+  margin-top: 18px;
+}
+
 
 .card .title {
   margin: 0 0 6px 0;
@@ -99,64 +110,4 @@ h3 {
   opacity: 0.45;
   color: rgba(20, 148, 20, 0.7);
   margin-top: 8px;
-}
-
-.sidebar {
-  font-size: 16px;
-  line-height: 1.45;
-}
-
-.sidebar p {
-  margin: 0 0 0.85em 0;
-}
-
-.contact {
-  margin-top: 1.25em;
-  font-size: 15px;
-  opacity: 0.8;
-}
-
-/* =========================
-   Card focus treatment (simple + readable)
-   ========================= */
-
-/* Border glow + slight wash on active card */
-.card:hover,
-.card:focus-within {
-  border-color: #6bff6b;
-  background-color: rgba(20, 148, 20, 0.05);
-  box-shadow:
-    0 0 6px rgba(20, 148, 20, 0.35),
-    0 0 14px rgba(20, 148, 20, 0.15);
-}
-
-/* Brighten title link + excerpt text on active card (no shimmer) */
-.card:hover .title a,
-.card:focus-within .title a,
-.card:hover .meta,
-.card:focus-within .meta,
-.card:hover .excerpt i,
-.card:focus-within .excerpt i {
-  color: #7dff7d;
-  text-shadow:
-    0 0 2px rgba(20, 148, 20, 0.35),
-    0 0 6px rgba(20, 148, 20, 0.18);
-}
-
-/* Dim other cards strongly when one is hovered (cards only, not sidebar) */
-body:has(.card:hover) .card {
-  opacity: 0.12;
-}
-
-body:has(.card:hover) .card:hover {
-  opacity: 1;
-}
-
-/* Recede section headings when a card is hovered */
-body:has(.card:hover) .work-col h3 {
-  opacity: 0.18;
-}
-
-body:has(.card:hover) .work-col h3:hover {
-  opacity: 1;
 }
