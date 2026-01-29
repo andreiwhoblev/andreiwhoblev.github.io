@@ -73,6 +73,13 @@ h3 {
   border: 1px solid currentColor;
   padding: 12px 14px;
   margin: 0 0 16px 0;
+
+  /* Interaction transitions (simple + readable) */
+  transition:
+    border-color 120ms linear,
+    background-color 120ms linear,
+    box-shadow 120ms linear,
+    opacity 160ms linear;
 }
 
 .card .title {
@@ -109,99 +116,36 @@ h3 {
   opacity: 0.8;
 }
 
-/* --- Card glow + excerpt shimmer (interaction only) --- */
+/* =========================
+   Card focus treatment (simple + readable)
+   ========================= */
 
-.card {
-  transition:
-    border-color 120ms linear,
-    background-color 120ms linear,
-    box-shadow 120ms linear;
-}
-
+/* Border glow + slight wash on active card */
 .card:hover,
 .card:focus-within {
   border-color: #6bff6b;
-  background-color: rgba(20, 148, 20, 0.06);
+  background-color: rgba(20, 148, 20, 0.05);
   box-shadow:
     0 0 6px rgba(20, 148, 20, 0.35),
     0 0 14px rgba(20, 148, 20, 0.15);
 }
 
-/* Stronger phosphor bloom for title + excerpt text */
-.card:hover .title,
-.card:focus-within .title {
-  text-shadow:
-    0 0 2px rgba(20, 148, 20, 0.55),
-    0 0 8px rgba(20, 148, 20, 0.28);
-}
-
+/* Brighten title link + excerpt text on active card (no shimmer) */
+.card:hover .title a,
+.card:focus-within .title a,
 .card:hover .excerpt i,
 .card:focus-within .excerpt i {
+  color: #7dff7d;
   text-shadow:
-    0 0 2px rgba(20, 148, 20, 0.70),
-    0 0 10px rgba(20, 148, 20, 0.36);
+    0 0 2px rgba(20, 148, 20, 0.35),
+    0 0 6px rgba(20, 148, 20, 0.18);
 }
 
-/* Coruscating shimmer + brightness pulse, applied to the excerpt text itself */
-.card:hover .excerpt i,
-.card:focus-within .excerpt i {
-  animation:
-    excerptShimmer 1.8s ease-in-out infinite,
-    phosphorPulse 2.6s ease-in-out infinite;
-  will-change: text-shadow, filter;
-}
-
-@keyframes excerptShimmer {
-  0% {
-    text-shadow:
-      0 0 2px rgba(20, 148, 20, 0.62),
-      0 0 10px rgba(20, 148, 20, 0.26);
-  }
-  25% {
-    text-shadow:
-      1px 0 2px rgba(20, 148, 20, 0.70),
-      -1px 0 12px rgba(20, 148, 20, 0.30);
-  }
-  50% {
-    text-shadow:
-      0 -1px 2px rgba(20, 148, 20, 0.78),
-      0 1px 14px rgba(20, 148, 20, 0.34);
-  }
-  75% {
-    text-shadow:
-      -1px 0 2px rgba(20, 148, 20, 0.70),
-      1px 0 12px rgba(20, 148, 20, 0.30);
-  }
-  100% {
-    text-shadow:
-      0 0 2px rgba(20, 148, 20, 0.62),
-      0 0 10px rgba(20, 148, 20, 0.26);
-  }
-}
-
-@keyframes phosphorPulse {
-  0% { filter: brightness(1); opacity: 1; }
-  50% { filter: brightness(1.12); opacity: 0.97; }
-  100% { filter: brightness(1); opacity: 1; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .card:hover .excerpt i,
-  .card:focus-within .excerpt i {
-    animation: none;
-  }
-}
-
-/* Dim non-hovered cards when one card is active */
+/* Dim other cards strongly when one is hovered (cards only, not sidebar) */
 body:has(.card:hover) .card {
-  transition: opacity 160ms linear, filter 160ms linear;
-  opacity: 0.45;
-  filter: blur(0.3px);
+  opacity: 0.18;
 }
 
-/* Keep hovered card crisp and bright */
 body:has(.card:hover) .card:hover {
   opacity: 1;
-  filter: none;
 }
-
